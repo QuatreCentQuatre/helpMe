@@ -7,18 +7,12 @@
 		this.__construct();
 	};
 
-	var defaults = {
-	};
-
 	var array = [];
 
 	var proto = HelpMe.prototype;
 
-	proto.options = null;
-
 	//--------Methods--------//
 	proto.__construct = function() {
-		this.options = $.extend({}, defaults);
 	};
 
 	proto.extend = function(source, overwrites, keep_source, deep) {
