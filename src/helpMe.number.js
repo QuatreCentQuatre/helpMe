@@ -3,8 +3,7 @@
  * Number Methods
  * */
 (function($, window, document, undefined){
-	var HelpMeNumber = {
-	};
+	var HelpMeNumber = {};
 
 	if (window.Me && window.Me.help) {
 		Me.help.number = HelpMeNumber;
