@@ -64,7 +64,7 @@
 			}
 		}
 		proxyArgs = finalArgs;
-
+ 
 		proxy = function() {
 			var args      = arguments;
 			var finalArgs = [];
