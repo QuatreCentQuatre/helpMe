@@ -16,7 +16,7 @@ Place the **helpMe.js** file in your default JavaScript vendor directory. Link t
 
 ```
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
-<script src="js/vendor/validateMe.js"></script>
+<script src="js/vendor/helpMe.js"></script>
 ```
 Here you go ! You're now ready to use helpMe. Here some of the most commons functions.
 
@@ -44,7 +44,6 @@ console.log("HasHorizontalScroll :", Me.help.hasHScroll());
 //Get the width of the scrollbar
 //Exemple: Scrollbar : 17
 console.log("Scrollbar :", Me.help.getScrollbarSize());
-
 
 ```
 ---
