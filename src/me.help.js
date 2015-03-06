@@ -1,16 +1,22 @@
-/*
- * HelpMe
- * Utils function
- * */
+/**
+ * HelpMe from the MeLibs
+ * Library that help you - adding a lots of helpfull methods
+ * Dependencies :
+ *  - Jquery
+ *
+ * Private Methods :
+ *
+ * Public Methods :
+ *
+ */
 (function($, window, document, undefined){
+	"use strict";
+	/* Create Me reference if does'nt exist */
+	if(!window.Me){window.Me = {};}
+	/* Initiate it if doesn't exist */
+	if(!Me.help){Me.help = {};}
 
-    var HelpMe = {};
-
-    var array = [];
-    var _scrollbarSize = null;
-
-    //--------Methods--------//
-    HelpMe.extend = function(source, overwrites, keep_source, deep) {
+    Me.help.extend = function(source, overwrites, keep_source, deep) {
         var result     = source;
         var args       = arguments;
         var finalArgs  = [];
@@ -47,7 +53,7 @@
         return result;
     };
 
-    HelpMe.proxy = function(method, scope) {
+	Me.help.proxy = function(method, scope) {
         var proxy;
         var proxyArgs = arguments;
         var finalArgs = [];
@@ -76,101 +82,11 @@
         return proxy;
     };
 
-
-    if(!window.Me) {
-        window.Me = {};
-    }
-
-    if (!window._) {
-        window._ = Me;
-    }
-
-    Me.help = HelpMe;
-    if (!window._) {
-        window._ = Me.help;
-    }
-
-    HelpMe.encodeURL = function(url) {
+	Me.help.encodeURL = function(url) {
         return encodeURIComponent(url).replace(/'/g,"%27").replace(/"/g,"%22");
     };
 
-    HelpMe.decodeURL = function(url) {
+	Me.help.decodeURL = function(url) {
         return decodeURIComponent(url.replace(/\+/g,  " "));
     };
-
-    HelpMe.getScrollbarSize = function() {
-        if(!_scrollbarSize) {
-            $('body').append('<div id="h-fsb" style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;">&nbsp;</div></div>');
-            var $hfsb = $('#h-fsb');
-            var w1 = $hfsb.find('div').innerWidth();
-            $hfsb.css('overflow-y', 'scroll');
-            var w2 = $hfsb.find('div').html('html is required to init new width.').innerWidth();
-            $hfsb.remove();
-            _scrollbarSize = w1 - w2;
-        }
-        return _scrollbarSize;
-    };
-
-    HelpMe.getScrollOffsets = function($el) {
-        var Yoffset = 0;
-        var Xoffset = 0;
-
-        if (!$el) {
-            if (typeof pageYOffset!= 'undefined') {
-                Yoffset = pageYOffset;
-            } else {
-                var B = document.body; //IE 'quirks'
-                var D = document.documentElement; //IE with doctype
-                D = (D.clientHeight)? D: B;
-                Yoffset = D.scrollTop;
-            }
-
-            if (typeof pageXOffset!= 'undefined') {
-                Xoffset = pageXOffset;
-            } else {
-                var B = document.body; //IE 'quirks'
-                var D = document.documentElement; //IE with doctype
-                D = (D.clientWidth)? D: B;
-                Xoffset = D.scrollLeft;
-            }
-        } else {
-            Yoffset = $el.scrollTop();
-            Xoffset = $el.scrollLeft();
-        }
-
-        return {x:Xoffset, y:Yoffset};
-    };
-
-    HelpMe.hasVScroll = function() {
-        var $selector = $('html, body');
-        $selector.css({height:'100%'});
-        var _hasVScroll = $(document).height() > $(window).height();
-        $selector.css({height:''});
-        return _hasVScroll;
-    };
-
-    HelpMe.hasHScroll = function() {
-        var $selector = $('html, body');
-        $selector.css({width:'100%'});
-        var _hasHScroll = $(document).width() > $(window).width();
-        $selector.css({width:''});
-        return _hasHScroll;
-    };
-
-    HelpMe.getTotalW = function(){
-        var total = $(window).width();
-        if (this.hasVScroll()) {
-            total += this.getScrollbarSize();
-        }
-        return total;
-    };
-
-    HelpMe.getTotalH = function(){
-        var total = $(window).height();
-        if (this.hasHScroll()) {
-            total += this.getScrollbarSize();
-        }
-        return total;
-    };
-
 }(jQuery, window, document));
