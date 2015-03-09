@@ -1,6 +1,6 @@
 #helpMe
 
-Multiples utility functions, who facilitate your work.
+Multiples utility functions, which facilitate your work.
 
 ---
 
