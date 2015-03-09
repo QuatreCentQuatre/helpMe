@@ -21,7 +21,7 @@
 		var from  = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
 		var to    = "aaaaaeeeeeiiiiooooouuuunc------";
 		var index = 0;
-		for (index; index < from.length; index++) {
+		for (index; index < to.length; index++) {
 			str = str.replace(new RegExp(from.charAt(index), 'g'), to.charAt(index));
 		}
 

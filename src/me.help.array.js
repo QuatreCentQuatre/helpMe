@@ -13,10 +13,20 @@
 	if(!Me.help){Me.help = {};}
 	if(!Me.help.array){Me.help.array = {};}
 
+	var makeArray = function (w, h, value) {
+		var array = [];
+		for (var i = 0; i < h; i++) {
+			array[i] = [];
+			for (var j = 0; j < w; j++) {
+				array[i][j] = value;
+			}
+		}
+		return array;
+	};
 	Me.help.array.rotateCounterClockwise = function (array) {
 		var w = array[0].length;
 		var h = array.length;
-		var newArray = this.makeArray(h, w, 0);
+		var newArray = makeArray(h, w, 0);
 		for (var i = 0; i < w; i++) {
 			for (var j = h - 1; j >= 0; j--) {
 				newArray[i][j] = array[j][i];
@@ -39,7 +49,7 @@
 	Me.help.array.rotateClockwise = function (array) {
 		var w = array[0].length;
 		var h = array.length;
-		var newArray = this.makeArray(h, w, 0);
+		var newArray = makeArray(h, w, 0);
 		for (var i = w - 1; i >= 0; i--) {
 			for (var j = h - 1; j >= 0; j--) {
 				newArray[i][j] = array[h - j - 1][i];
