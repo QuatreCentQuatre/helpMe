@@ -13,6 +13,4 @@
 	if(!Me.help){Me.help = {};}
 	if(!Me.help.number){Me.help.number = {};}
 
-	Me.help.number.getScrollbarSize = function() {
-    };
 }(jQuery, window, document));
