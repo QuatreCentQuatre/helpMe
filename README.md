@@ -4,6 +4,12 @@ Multiples utility functions, which facilitate your work.
 
 ---
 
+### Version
+
+**1.0.0**
+
+---
+
 ### Dependencies
 
 **jQuery-1.9.1 ++** (http://jquery.com/download/)

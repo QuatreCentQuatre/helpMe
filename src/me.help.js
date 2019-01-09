@@ -1,12 +1,24 @@
 /**
  * HelpMe from the MeLibs
  * Library that help you - adding a lots of helpfull methods
- * Dependencies :
- *  - Jquery
  *
- * Private Methods :
+ * * Licence :
+ *  - GLP v2
+ *
+ * Version :
+ *  - 1.0.0
+ *
+ * Dependencies :
+ *  - jQuery (https://jquery.com/)
  *
  * Public Methods :
+ * -
+ *
+ * Private Methods :
+ * -
+ *
+ * Updates Needed :
+ * -
  *
  */
 (function($, window, document, undefined){
